@@ -15,7 +15,7 @@ To deploy your own copy, open the solution in Visual Studio, build it, right cli
 1. An SOAP end point: **https://sess.azurewebsites.net/soap**. This is recommended but it's more work for client to construct a request. If you are using a sophisticated client, you can construct a SOAP message and post to this end point. If you are using .NET, you can use svcutil.exe to generate strong typed client proxy stub. 
 2. A transitional web end point which takes JSON or normal HTTP post: **https://sess.azurewebsites.net/service.svc/json/SendMail**.
 
-**Parameters** The service support following parameters:
+**Parameters** - The service support following parameters:
 
 1. **From** - this is the sender, it can be a simple email address (e.g. "a@mail.com"), or "Name <email>", e.g. "Alice Bob <a@mail.com>"
 2. **To** - This is the recipients. It's a list of recipients, each recipient can be a single email address or "Name <email>"  
@@ -25,7 +25,13 @@ To deploy your own copy, open the solution in Visual Studio, build it, right cli
 
 This simple service does not currently support other email features like attachment, HTML body, CC, BCC, etc.
     
+**Sample JSON posted**
 
+{"From":"TestFrom@TestDomain.com","Providers":[{"ApiKey":"your-api-key","ProviderType":"SendGrid"}],"Subject":"Test Subject","Text":"My test text.","To":["simpleemailsendingservice@gmail.com"]}
+
+**Sample response**
+
+{"MessageId":"message-id-string","Messages":[list of messages],"ProviderUsed":SendGrid,"Status":Success}
 
 ## Contributing
 
