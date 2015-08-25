@@ -7,7 +7,7 @@ When you need a simple email service for your application (e.g. a "a contact me"
 This service utilize these service providers, wrap their API to provide a small simple SendMail API so that it's more consumable for small applications; In the back-end it can try one provider and if that doesn't work, it will fail over to other providers. 
 
 ## More about this project
-The solution focus on back-end, it use C# and WCF to build the service. Underneath it use several open source libraries to help with the mission, e.g. MailGunApi, RestSharp. The code architecture provides abstraction over MailServiceProviders so providers can be easily added/removed/modified. The service is now hosted on IIS in Azure, which can be scaled out easily.
+The solution focus on back-end, it uses C# and WCF to build the service. Underneath it uses several open source libraries (e.g. MailGunApi, RestSharp) to help calling mail service providers. The code architecture provides abstraction over MailServiceProviders so providers can be easily added/removed/modified. The service is now hosted in IIS in Azure, which can be scaled out easily.
 
 This is the initial version, due to time constraint there is a lot of room for improvement, e.g.:
 
