@@ -126,13 +126,13 @@ namespace SimpleEmailSendingService
         }
 
         [DataMember]
-        public SendMailResultStatus Status { get; set; }
+        public string Status { get; set; }
 
         [DataMember]
         public string MessageId { get; set; }
 
         [DataMember]
-        public ProviderType ProviderUsed { get; set; }
+        public string ProviderUsed { get; set; }
 
         [DataMember]
         public List<string> Messages { get; set; }

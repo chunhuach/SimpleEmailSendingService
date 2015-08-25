@@ -99,7 +99,7 @@ namespace SimpleEmailSendingService
             // if no ApiKeys are found, we can't use any providers
             if (providers.Count == 0)
             {
-                result.Status = SendMailResultStatus.Error;
+                result.Status = SendMailResultStatus.Error.ToString();
                 result.Messages.Add("No mail service provider available.");
                 return result;
             }
@@ -121,21 +121,21 @@ namespace SimpleEmailSendingService
 
                     if (success)
                     {
-                        result.Status = SendMailResultStatus.Success;
+                        result.Status = SendMailResultStatus.Success.ToString();
                         result.MessageId = messageId;
-                        result.ProviderUsed = providers[i].ProviderType;
+                        result.ProviderUsed = providers[i].ProviderType.ToString();
                         return result;
                     }
                     else
                     {
                         // we don't know why it failed, so continue and try next provider
-                        result.Status = SendMailResultStatus.Error;
+                        result.Status = SendMailResultStatus.Error.ToString();
                         continue;
                     }
                 }
                 catch (Exception e)
                 {
-                    result.Status = SendMailResultStatus.Error;
+                    result.Status = SendMailResultStatus.Error.ToString();
                     result.Messages.Add(SendMailRequestProcessor.GetErrorStringFromException(e));
 
                     if (e is FormatException)

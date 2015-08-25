@@ -6,7 +6,13 @@ This is a simple email service for sending emails using different providers. Cli
 
 The service is hosted live at [https://sess.azurewebsites.net](https://sess.azurewebsites.net)
 
-To deploy your own copy, open the solution in Visual Studio, build it, right click on the project and select "publish", then follow the instructions to deploy to your WCF hosting web location. Optionally you can modify app.config to configure your provider API keys.
+## Build/Deploy
+1. Close the project
+2. Double click on SimpleEmailSendingService.sln to open the project
+3. (make sure you install NuGet first) in Visual Studio, select Tools -> NuGet Package Manager -> Package Manager Console, type *Update-Package –reinstall*
+4. (Optional) modify app.config to configure your provider API keys. 
+4. Press F5 to build
+5. Right click on the project and select "publish", then follow the instructions to deploy to your WCF hosting web location. 
 
 ## Usage
 

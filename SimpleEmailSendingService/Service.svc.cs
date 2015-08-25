@@ -53,7 +53,7 @@ namespace SimpleEmailSendingService
             catch (Exception e)
             {
                 SendMailResult result = new SendMailResult();
-                result.Status = SendMailResultStatus.Error;
+                result.Status = SendMailResultStatus.Error.ToString();
                 result.Messages.Add(e.Message);
                 return result;
             }
